@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Pavanam&family=Paytone+One&display=swap');
+@font-face {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/SegoeUI.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/SegoeUI.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.container{
+    max-width: 1282px;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    height: 700px;
+    /* background-color: aqua; */
+    background-image: url(/header-img.png);
+    background-size: cover;
+    
+}
+
+.header .content{
+    padding-top: 35px;
+}
+
+.header .content .navbor{
+   max-width: 592px;
+   min-height: 59px;
+   display: grid;
+   grid-template-columns: 143px 449px; 
+   /* border: 2px solid green;  */
+}
+
+.header .content .navbor .logo{
+    width: 115px;
+    height: 47px;
+}
+
+.header .content .navbor .nav{
+    display: grid;
+    grid-template-columns: 94px 75px 71px 49px;
+    column-gap: 30px;
+    justify-content: end;
+    align-items: center;
+}
+
+.header .content .navbor .nav .nav_item .nav_link{
+
+    font-family: 'Paytone One', sans-serif;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: left;
+    color: #fff;
+}
+
+.main{
+    background-image: url(/main.png);
+    background-size: cover;
+    position: relative;
+} 
+
+.main .section{
+    position: absolute;
+    top: -559px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 994px;
+    height: auto;
+    background: linear-gradient(180deg, rgba(50, 42, 39, 0) 0%, rgba(45, 40, 40, 0.85) 33.85%, #2D2828 49.48%, #2D2828 68.75%, #2D2828 70.29%, #2D2828 80%);
+    box-shadow: -15px 0 15px rgba(0, 0, 0, 0.3);
+    padding:67px  65px;
+}
+
+
+.main .section .titel{
+    /* margin-left: 65px; */
+    width: 233px;
+    min-height:89px ;
+    font-family: 'Paytone One', sans-serif;
+    font-style: Regular;
+    font-size: 64px;
+    line-height: 89px;
+    text-align: left;
+    color: #fff;
+}
+
+.main .section h1 span{
+    /* margin-left: 65px; */
+    width: 378px;
+    min-height:28px ;
+    font-family: 'Paytone One', sans-serif;
+    font-style: Regular;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+    color: #fff;
+}
+
+.main .section .text{
+    width: 432px;
+    min-height:135px ;
+    font-family: 'Segoe UI';
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: left;
+    color: #fff;
+    /* margin-left: 65px; */
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+
+.main .section .email{
+    width: 291px;
+    min-height:36px ;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    padding: 9px 0;
+    padding-left: 35px;
+    font-family: 'Pavanam', sans-serif;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.4);
+    /* margin-left: 65px; */
+    margin-top: 30px;
+    margin-bottom: 79px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(0, 0, 0, 0.103);
+}
+
+.main .section .manzil .link{
+    width: 123px;
+    min-height:36px ;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    padding: 9px 22px;
+    font-family: 'Pavanam', sans-serif;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 18.07px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.4);
+    margin-left: 22px;
+    border: 2px solid #FF1640;
+    background-color: rgba(0, 0, 0, 0.103);
+    /* background-color: rgba(255, 255, 255, 0.459); */
+}
+
+.main .section .hr{
+    width: 100%;
+    margin-bottom: 37px;
+    display: inline-block;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main .section .tarmoqlar{
+    display: grid;
+    grid-template-columns: 83px 92px 71px 79px 89px 57px;
+    column-gap: 71px;
+    align-items: center;
+    position: relative;
+    /* margin-left: 67px; */
+}
+
+.main .section .tarmoqlar::before{
+    content: "";
+    width: 994px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: -37px;
+    left: -65px;
+    z-index: 1;
+
+}
+
+.main .section .tarmoqlar .item{
+    max-width: 92px;
+}
+
+
+
+
+
+
