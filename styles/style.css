@@ -16,9 +16,11 @@
 }
 
 .container{
-    max-width: 1282px;
+    width: 1282px;
     margin: 0 auto;
+   
 }
+
 
 a{
     text-decoration: none;
@@ -29,6 +31,7 @@ a{
     /* background-color: aqua; */
     background-image: url(/header-img.png);
     background-size: cover;
+    overflow-x:hidden ;
     
 }
 
@@ -41,7 +44,6 @@ a{
    min-height: 59px;
    display: grid;
    grid-template-columns: 143px 449px; 
-   /* border: 2px solid green;  */
 }
 
 .header .content .navbor .logo{
@@ -58,19 +60,53 @@ a{
 }
 
 .header .content .navbor .nav .nav_item .nav_link{
-
     font-family: 'Paytone One', sans-serif;
     font-style: Regular;
     font-size: 18px;
     line-height: 25px;
     text-align: left;
     color: #fff;
+    position: relative;
+    transition: all .4s linear;
+}
+.header .content .navbor .nav .nav_item{
+    
+}
+.header .content .navbor .nav .nav_item .nav_link:hover{
+    transition: all .4s linear;
+    color: rgba(238, 196, 141, 0.8);
+}
+
+.header .content .navbor .nav .nav_item .nav_link::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0px;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgba(238, 196, 141, 0.3);
+    z-index: 1;
+    transition: width .4s linear;
+}
+.header .content .navbor .nav .nav_item .nav_link:hover::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 15px;
+ 
 }
 
 .main{
+    width: 100%;
+    min-height: 1789px;
     background-image: url(/main.png);
     background-size: cover;
     position: relative;
+    padding-bottom: 100px;
+    z-index: 1;
 } 
 
 .main .section{
@@ -79,16 +115,24 @@ a{
     left: 50%;
     transform: translateX(-50%);
     width: 994px;
-    height: auto;
+    /* height: auto; */
+    
+}
+
+.main .section .section_content{
+     
     background: linear-gradient(180deg, rgba(50, 42, 39, 0) 0%, rgba(45, 40, 40, 0.85) 33.85%, #2D2828 49.48%, #2D2828 68.75%, #2D2828 70.29%, #2D2828 80%);
     box-shadow: -15px 0 15px rgba(0, 0, 0, 0.3);
     padding:67px  65px;
+    width: 994px;
+    height: 100%;
+   
 }
 
 
 .main .section .titel{
     /* margin-left: 65px; */
-    width: 233px;
+    width: 378px;
     min-height:89px ;
     font-family: 'Paytone One', sans-serif;
     font-style: Regular;
@@ -98,8 +142,9 @@ a{
     color: #fff;
 }
 
-.main .section h1 span{
+.main .section .titel .subtitel{
     /* margin-left: 65px; */
+    display: block;
     width: 378px;
     min-height:28px ;
     font-family: 'Paytone One', sans-serif;
@@ -129,7 +174,7 @@ a{
     width: 291px;
     min-height:36px ;
     border-radius: 50px;
-    border: none;
+    border: 1.5px solid rgba(0, 0, 0, 0.103);
     outline: none;
     padding: 9px 0;
     padding-left: 35px;
@@ -142,15 +187,21 @@ a{
     /* margin-left: 65px; */
     margin-top: 30px;
     margin-bottom: 79px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
     background-color: rgba(0, 0, 0, 0.103);
+    transition: all .4s linear;
+}
+
+.main .section .email:hover{
+   border: 1.5px solid green;
+   background-color: rgba(0, 0, 0, 0.203);
+   transition: all .4s linear; 
 }
 
 .main .section .manzil .link{
-    width: 123px;
+    width: 129px;
     min-height:36px ;
     border-radius: 50px;
-    border: none;
+    border: 2px solid rgba(0, 0, 0, 0.03);
     outline: none;
     padding: 9px 22px;
     font-family: 'Pavanam', sans-serif;
@@ -160,18 +211,18 @@ a{
     text-align: left;
     color: rgba(255, 255, 255, 0.4);
     margin-left: 22px;
-    border: 2px solid #FF1640;
     background-color: rgba(0, 0, 0, 0.103);
+    cursor: pointer;
+    transition: all .4s linear;
     /* background-color: rgba(255, 255, 255, 0.459); */
 }
 
-.main .section .hr{
-    width: 100%;
-    margin-bottom: 37px;
-    display: inline-block;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-}
+.main .section .manzil .link:hover{
+    border: 2px solid rgba(253, 174, 3, 0.529);
+    background-color: rgba(0, 0, 0, 0.303); 
+    box-shadow: 0 4px 5px rgba(255, 255, 255, 0.137),  0 -4px 5px rgba(255, 255, 255, 0.137);
+    transition: all .4s linear;
+ }
 
 .main .section .tarmoqlar{
     display: grid;
@@ -186,7 +237,6 @@ a{
     content: "";
     width: 994px;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
     position: absolute;
     top: -37px;
     left: -65px;
@@ -196,7 +246,460 @@ a{
 
 .main .section .tarmoqlar .item{
     max-width: 92px;
+} 
+
+
+.main .section .marketing_img{
+    width: 842px;
+    min-height: 308px;
+    margin-top: 82px;
+
+    display: grid;
+    grid-template-columns: 293px 255px 293px;
+    grid-template-rows: 308px;
+    align-items: end;
+    margin-bottom: 81px;
+    position: relative;
+    bottom: -20px;
+    left: -21px;
 }
+
+.main .section .marketing_img .img_item:nth-child(2){
+    position: relative;
+}
+.main .section .marketing_img .img_item:nth-child(2) img{
+    position: absolute;
+    bottom: 71px;
+    left: -19px;
+}
+
+.main .section .marketing_titel{
+    width: 645px;
+    min-height: 35px;
+    margin: 0 auto;
+    margin-bottom: 61px;
+    display: grid;
+    grid-template-columns: 151px 335px 142px;
+    column-gap: 6px;
+    align-items: center;
+}
+
+.main .section .marketing_titel .item_titel:nth-child(1){
+    font-family: 'Paytone One', sans-serif;
+    font-style: Regular;
+    font-size: 25px;
+    line-height: 35px;
+    text-align: left;
+    color: #fff;
+}
+ 
+
+.main .section .marketing_titel .item_titel:nth-child(2) span{
+    display: inline-block;
+   width: 10px;
+   height: 1px;
+   margin: 13px 5px 8px 0;
+   background-color:rgba(255, 255, 255, 0.75);
+}
+.main .section .marketing_titel .item_titel:nth-child(2) a{
+   width: 21px;
+   height: 21px;
+    margin-left: 5px;
+
+}
+
+.main .section .marketing_titel .item_titel:nth-child(3){
+   width: 142px;
+   height: 27px;
+   border-radius: 20px;
+   background: linear-gradient(180deg, #864A23 0%, #6A3A1B 100%);
+   padding-bottom: 8px;
+   padding-top: 3px;
+   text-align: center;
+   cursor: pointer;
+
+}
+
+.main .section .marketing_titel .item_titel:nth-child(3) img{
+    width: 12px;
+    height: 13px;
+    margin-right: 7px
+ }
+
+ .main .section .marketing_titel .item_titel:nth-child(3) a{
+    font-family: 'Segoe UI';
+    font-style: Regular;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+    color: #fff;
+ }
+ .main .section .cart_list{
+    width: 870px;
+    min-height: 174px;
+    display: grid;
+    grid-template-columns: 485px 315px;
+    column-gap: 54px;
+    margin-bottom: 71px;
+ }
+
+.main .section .cart_list .cart_header{
+    width: 470px;
+    height: 40px;
+    display: grid;
+    grid-template-columns:221px 131px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.main .section .list_1 .cart_header .elips{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.main .section .cart_list .cart_header .elips{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #FF1640;
+    margin-right: 9px;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    line-height: 27px;
+    color: #fff;
+    border: 1px solid #FFFFFF;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.main .section .cart_list .cart_header .text{
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    line-height: 27px;
+    color: #fff;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.main .section .cart_list .cart_header button{
+    width: 131px;
+    height: 35px;
+    border-radius: 50px;
+    background-color: #C4C4C4;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    column-gap: 8px;
+}
+.main .section .cart_list.list_1 .cart_header button{
+    grid-template-columns: 26px 76px;
+}
+
+.main .section .cart_list.list_2 .cart_header button{
+    grid-template-columns: 53px 48px;
+    padding-left: 20px;
+    /* padding-top: 3px; */
+}
+.main .section .cart_list.list_2 .cart_header button img{
+    width: 48px;
+    height: 29px;
+    margin-top: 4px;
+
+}
+
+
+.main .section .cart_header button span{
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #2D2828;
+}
+
+
+
+.main .section .cart_body{
+    width: 470px;
+    min-height: 128px;
+    background-image: url(/imgs/Rectangle\ 13.png);
+    display: grid;
+    grid-template-columns: 90px 85px 238px;
+
+}
+
+.main .section .cart_body .profil_img{
+    min-height: 60px;
+    height: 70px;
+   position: relative;  
+   margin-top: 14px;
+   margin-left: 17px;
+}
+.main .section .cart_body .profil_img .vscode{
+   position: absolute;  
+   bottom: 6px;
+   right: 17px;
+}
+
+.main .section .cart_body .profil_info{
+    margin-top: 14px;
+    margin-right: 14px;
+    height: 60px;
+}
+
+
+
+.main .section .cart_body .profil_info .name{
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+    color: #2D2828;
+}
+
+.main .section .cart_body .profil_info .activ{
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(45, 40, 40, 0.7)    ;
+}
+
+.main .section .cart_body .profil_content{
+    width: 260px;
+}
+
+.main .section .cart_body .profil_content .profil_titel{
+    width: 250px;
+    margin:19px 29px 11px 30px ;
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: left;
+    color: #2D2828;
+
+}
+
+.main .section .cart_body .profil_content .profil_text{
+    width: 251px;
+    margin:0px 16px 23px 30px ;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+    color: #2D2828;
+}
+
+
+.main .section .cart_item_right .cart_right_titel{
+   margin-top: 50px;
+   font-family: 'Segoe UI';
+   font-weight: 600;
+   font-size: 22px;
+   line-height:33px;
+   text-align: left;
+   color: rgba(255, 255, 255, 0.7);
+
+}
+
+.main .section .cart_item_right .cart_right_text{
+    margin-top: 19px;
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-size: 14px;
+    line-height:21px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.7);
+ 
+}
+
+.main .section .companies{
+    /* margin-top: ; */
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    align-items: center;
+    margin-left: 67px;
+}
+
+.main .section .marketing_infos{
+    display: grid;
+    grid-template-columns: repeat(3, 285px);
+    column-gap: 24px;
+    margin-left: 67px;
+}
+
+.main .section .marketing_infos .info_item{
+    position: relative;
+}
+
+.main .section .marketing_infos .info_item picture{
+    display: grid;
+    grid-template-columns: 89px 190px;
+    align-items: center;
+    column-gap: 15px;
+    position: relative;
+}
+
+.main .section .marketing_infos .info_item:nth-child(2) picture img:nth-child(2){
+   position: absolute;
+   right: 40px;
+    
+}
+
+.main .section .marketing_infos .info_item .info_text{
+    margin-top: 22px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 18px;
+    line-height:27px;
+    text-align: left;
+    color: #000000;
+    /*  */
+}
+
+.footer{
+    min-height: 400px;
+    background-image: url(/imgs/footerImig.jpg);
+    background-size: cover;
+    padding-top: 0px;
+    opacity: 1;
+}
+.footer .footer_content{
+    width: 100%;
+    position: relative;
+    top: -75px;
+    min-height: 460px;
+    background-image: url(/imgs/footerimg.png);
+    background-size: cover;
+    z-index: 9999;
+  
+    
+}
+
+.footer .footer_content .img_center{
+    
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    z-index: 100;
+}
+
+ .footer .content{
+    display:flex;
+    padding-top: 151px;
+
+ }
+
+ .footer .content .alpana{
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-size: 45px;
+    line-height:63px;
+    text-align: left;
+    color: #fff;
+ }
+
+ .footer .content .footer_listes{
+    margin-left: 149px;
+    display: grid;
+    grid-template-columns: 80px 105px 82px;
+    column-gap: 84px;
+    margin-bottom: 108px;
+
+ }
+
+ .footer .content .footer_listes p{
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 18px;
+    line-height:17px;
+    text-align: left;
+    color: #fff;
+    margin-bottom: 11px;
+ }
+
+ .footer .content .footer_listes .list_item .link{
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    font-size: 18px;
+    line-height:27px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.404);
+    margin: 11px 0;
+    transition: all .4s linear;
+ }
+
+ .footer .content .footer_listes .list_item .link:hover{
+    transition: all .4s linear;
+    color: green;
+ }
+
+
+
+ .footer .content .aboute_site{
+    margin-left: 323px;
+    width: 100%;
+    text-align: right;
+    
+ }
+
+ .footer .content .aboute_site .sociol_sets{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 14px;
+ }
+
+ .footer .content .aboute_site .sociol_sets .set_link{
+   margin-left: 32px;
+   
+ }
+
+ .footer .content .aboute_site .text1{
+    font-family: 'Segoe UI';
+    font-weight: bold;
+    font-size: 18px;
+    line-height:27px;
+    color: #fff;
+    margin-bottom: 11px;
+ }
+
+ .footer .content .aboute_site .text2{
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    font-size: 18px;
+    line-height:27px;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 11px;
+ }
+
+ .footer .footer_content .footer_content_bottom{
+    width: 410px;
+    height: 57px;
+    padding: 9px 11px;
+    margin: 0 auto;
+    background-color: #fff;
+ }
+
+ .footer .footer_content .footer_content_bottom span{
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 28px;
+    line-height:40px;
+    color: #000000;
+    margin-bottom: 11px;    
+ }
+
+
+
+
+
+
 
 
 
